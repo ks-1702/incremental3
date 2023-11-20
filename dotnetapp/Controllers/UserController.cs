@@ -19,26 +19,34 @@ namespace dotnetapp.Controllers
  
         [HttpGet]
  
-        [Route("ListTeam")]
-        public IActionResult Get()
-        {
-            var data=from m in context.Teams select m;
-            return Ok(data);
+        // [Route("ListTeam")]
+        // public IActionResult Get()
+        // {
+        //     var data=from m in context.Teams select m;
+        //     return Ok(data);
+        // }
+ 
+
+        [HttpPost]
+        [Route("UserRegister")]
+        public IActionResult Register(User u) {
+            context.Users.Add(u);
+            context.SaveChanges();
+            return RedirectToAction("Login");
         }
  
         [HttpPost]
         [Route("UserLogin")]
  
-        public IActionResult Login() {
-            return Ok();
+        public IActionResult Login(User u) {
+            if(ModelState.IsValid)
+            {
+                var user=context
+            }
+
         }
  
-        [HttpPost]
-        [Route("UserRegister")]
-        public IActionResult Register() {
-            return Ok();
-        }
- 
+        
  
  
        
