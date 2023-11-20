@@ -35,6 +35,8 @@ namespace dotnetapp.Controllers
             return Ok(data);
         }
 
+        public IActionResult PutPlayer
+
 
  
     }
