@@ -34,7 +34,8 @@ namespace dotnetapp.Controllers
             var data=context.Teams.ToList();
             return Ok(data);
         }
-
+        [HttpPut]
+        [Route("EditPlayer/{id}")]
         public IActionResult PutPlayer(int id,Player p)
         {
             PutPlayer pl=context.Players.Find(id);

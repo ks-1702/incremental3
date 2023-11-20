@@ -41,7 +41,8 @@ namespace dotnetapp.Controllers
         public IActionResult Login(User u) {
             if(ModelState.IsValid)
             {
-                var user=context.Users.FirstOrDefault(u=>)
+                var user=context.Users.FirstOrDefault(u=>u.Name==U.Name && u.password==U.password);
+                return RedirectToAction("Login",U);
             }
 
         }
