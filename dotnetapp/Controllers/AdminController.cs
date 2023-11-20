@@ -22,82 +22,20 @@ namespace dotnetapp.Controllers
             context = _context;
         }
  
-        [HttpGet]
- 
-        [Route("ListTeam")]
-        public IActionResult Get()
+        
+        public IActionResult GetPlayers()
         {
-            var data=from m in context.Teams select m;
+            var data=context.Players.ToList();
             return Ok(data);
         }
- 
-        [HttpGet]
- 
-        [Route("ListTeam/{id}")]
-        public IActionResult Get(int id)
+
+        public IActionResult GetTeams()
         {
-            // var data=context.Teams.ToList();
-            if(id==null)
-            {
-                return BadRequest("Id cannot be null");
-            }
-            var data=(from m in context.Teams where m.TeamId==id select m).FirstOrDefault();
-            // var data=context.Teams.Find(id);
-            if(data==null)
-            {
-                return NotFound($"Movie {id} not found");
-            }
+            var data=context.Teams.ToList();
             return Ok(data);
-           
         }
-        [HttpPost]
-        [Route("AddTeam")]
-        public IActionResult Post(Team Team)
-        {
-            if(ModelState.IsValid)
-            {
-                try{
-                    context.Teams.Add(Team);
-                    context.SaveChanges();
- 
-                }
-                catch(System.Exception ex){
-                    return BadRequest(ex.InnerException.Message);
- 
-                }
-            }
-            return Created("Record Added",Team);
- 
-        }
-        [HttpPut]
-        [Route("EditTeam/{id}")]
-        public IActionResult Put(int id, Team Team)
-        {
-            if(ModelState.IsValid)
-            {
-                Team mv = context.Teams.Find(id);
-                mv.TeamName = Team.TeamName;
-                context.SaveChanges();
-                return Ok();
-               
- 
- 
- 
-            }
-            return BadRequest("Unable to Edit Record");
-        }
-        [HttpDelete]
-        [Route("DeleteTeam/{id}")]
-        public IActionResult Delete(int id)
-        {
- 
-                var data=context.Teams.Find(id);
-                context.Teams.Remove(data);
-                context.SaveChanges();
-                return Ok();
- 
-           
-        }
+
+
  
     }
 }
