@@ -22,29 +22,20 @@ namespace dotnetapp.Controllers
             context = _context;
         }
  
+        [HttpGet]
+        [Route("GetPlayer")]
  
         public IActionResult GetPlayers()
         {
             var data=context.Players.ToList();
             return Ok(data);
         }
-
-
-        public IActionResult PostPlayer(Player p)
-        {  try
-        {
-            context.Players.Add(p);
-            context.SaveChanges();
-        }
-
-        catch(System.Exception ex)
-
-
-        }
-
-
+ 
+ 
        
  
+        [HttpPut]
+        [Route("EditPlayer")]
         public IActionResult PutPlayer(int id, Player player)
         {
             try
@@ -70,8 +61,8 @@ namespace dotnetapp.Controllers
             return BadRequest("Unable to Edit Record");
         }
  
- 
- 
+        [HttpDelete]
+        [Route("DeletePlayer")]
         public IActionResult DeletePlayer(int id)
         {
             try
@@ -87,6 +78,98 @@ namespace dotnetapp.Controllers
  
             }
         }
+ 
+        [HttpPost]
+        [Route("AddPlayer")]
+        public IActionResult Post(Player p)
+        {
+            if(ModelState.IsValid)
+            {
+                try{
+                    context.Players.Add(p);
+                    context.SaveChanges();
+                }
+                catch(SystemException ex)
+                {
+                    return BadRequest(ex.InnerException.Message);
+                }
+            }
+ 
+            return Created("Record Added", p); //
+        }
+        ///////////////////////////////////////////////////////////////////////////
+ 
+        [HttpGet]
+        [Route("GetTeams")]
+        public IActionResult GetTeams(int id)
+        {
+            var data=context.Teams.ToList();
+            return Ok(data);  
+        }
+ 
+        [HttpPut]
+        [Route("EditTeam")]
+        public IActionResult PutTeam(int id, Team t)
+        {
+            try
+            {
+ 
+            if(ModelState.IsValid)
+            {
+                // Team t = new Team{};
+                Team e = context.Teams.Find(id);
+                e.TeamName = t.TeamName;
+                context.SaveChanges();
+                return Ok();
+            }
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+ 
+            return BadRequest("Unable to Edit Record");
+        }
+ 
+ 
+        [HttpDelete]
+        [Route("DeleteTeam")]
+        public IActionResult DeleteTeam(int id)
+        {
+            try
+            {
+                var data = context.Teams.Find(id);
+                context.Teams.Remove(data);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+ 
+            }
+        }
+ 
+        [HttpPost]
+        [Route("AddTeam")]
+        public IActionResult PostTeam(Team t)
+        {
+            if(ModelState.IsValid)
+            {
+                try{
+                    context.Teams.Add(t);
+                    context.SaveChanges();
+                }
+                catch(SystemException ex)
+                {
+                    return BadRequest(ex.InnerException.Message);
+                }
+            }
+ 
+            return Created("Record Added", t); //
+        }
+ 
     }
+ 
  
 }
