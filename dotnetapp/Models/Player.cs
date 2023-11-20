@@ -14,6 +14,7 @@ namespace dotnetapp.Models
             [Range(1, int.MaxValue, ErrorMessage = "Bidding price must be greater than 0.")]
            
             public decimal BiddingPrice {get;set;}  
+            [ForeignKey("Player")]
  
             public int TeamId {get;set;}
  
