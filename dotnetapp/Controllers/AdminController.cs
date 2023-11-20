@@ -35,7 +35,26 @@ namespace dotnetapp.Controllers
             return Ok(data);
         }
 
-        public IActionResult PutPlayer
+        public IActionResult PutPlayer(int id,Player p)
+        {
+            PutPlayer pl=context.Players.Find(id);
+            if(ModelState.IsValid)
+            {
+                
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("DeletePlayer/{id}")]
+
+        public IActionResult DeletePlayer(int id,Player p)
+        {
+            var data=context.Players.Find(id);
+            context.Players.Remove(data);
+            context.SaveChanges();
+            return Ok();
+        }
 
 
  
