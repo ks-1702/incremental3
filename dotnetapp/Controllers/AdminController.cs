@@ -22,42 +22,63 @@ namespace dotnetapp.Controllers
             context = _context;
         }
  
-        
+ 
         public IActionResult GetPlayers()
         {
             var data=context.Players.ToList();
             return Ok(data);
         }
-
-        public IActionResult GetTeams()
+ 
+        public IActionResult GetTeams(int id)
         {
             var data=context.Teams.ToList();
-            return Ok(data);
+            return Ok(data);  
         }
-        [HttpPut]
-        [Route("EditPlayer/{id}")]
-        public IActionResult PutPlayer(int id,Player p)
+ 
+ 
+ 
+        public IActionResult PutPlayer(int id, Player player)
         {
-            PutPlayer pl=context.Players.Find(id);
+            try
+            {
+ 
             if(ModelState.IsValid)
             {
-                
+                Player p = new Player{};
+                Player e = context.Players.Find(id);
+                e.Name = player.Name;
+                e.Age = player.Age;
+                e.Category = player.Category;
+                e.BiddingPrice = player.BiddingPrice;
+                context.SaveChanges();
+                return Ok();
+            }
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+ 
+            return BadRequest("Unable to Edit Record");
+        }
+ 
+ 
+ 
+        public IActionResult DeletePlayer(int id)
+        {
+            try
+            {
+                var data = context.Players.Find(id);
+                context.Players.Remove(data);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch(System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+ 
             }
         }
-
-
-        [HttpDelete]
-        [Route("DeletePlayer/{id}")]
-
-        public IActionResult DeletePlayer(int id,Player p)
-        {
-            var data=context.Players.Find(id);
-            context.Players.Remove(data);
-            context.SaveChanges();
-            return Ok();
-        }
-
-
- 
     }
+ 
 }
