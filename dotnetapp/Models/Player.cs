@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
  
 namespace dotnetapp.Models
@@ -14,7 +15,7 @@ namespace dotnetapp.Models
             [Range(1, int.MaxValue, ErrorMessage = "Bidding price must be greater than 0.")]
            
             public decimal BiddingPrice {get;set;}  
-            [ForeignKey("Player")]
+            [ForeignKey("Team")]
  
             public int TeamId {get;set;}
  
