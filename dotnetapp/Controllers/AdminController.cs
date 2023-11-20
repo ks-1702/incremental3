@@ -28,14 +28,15 @@ namespace dotnetapp.Controllers
             var data=context.Players.ToList();
             return Ok(data);
         }
- 
-        public IActionResult GetTeams(int id)
+
+
+        public IActionResult Post()
         {
-            var data=context.Teams.ToList();
-            return Ok(data);  
+            
         }
- 
- 
+
+
+       
  
         public IActionResult PutPlayer(int id, Player player)
         {
