@@ -3,7 +3,7 @@ export interface IPlayer {
     name:string
     age:number
     category:string
-    BiddingPrice:number
-    TeamId:number
+    biddingPrice:number
+    teamid:number
 
 }

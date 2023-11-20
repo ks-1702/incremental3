@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from '../models/iplayer';
+import { IPlayer } from '../Model/iplayer';
 import {catchError} from 'rxjs/operators';
 // import { HttpErrorResponse } from '@angular/common/http';
  
