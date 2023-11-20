@@ -17,6 +17,6 @@ namespace dotnetapp.Models
  
             public int TeamId {get;set;}
  
-            public virtual Team team {get;set;}
+            public virtual Team ?team {get;set;}
         }
 }
