@@ -41,7 +41,7 @@ namespace dotnetapp.Controllers
         public IActionResult Login(User u) {
             if(ModelState.IsValid)
             {
-                var user=context
+                var user=context.Users.FirstOrDefault(u=>)
             }
 
         }
