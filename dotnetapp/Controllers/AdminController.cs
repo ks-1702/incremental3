@@ -30,9 +30,16 @@ namespace dotnetapp.Controllers
         }
 
 
-        public IActionResult Post()
+        public IActionResult PostPlayer(Player p)
+        {  try
         {
-            
+            context.Players.Add(p);
+            context.SaveChanges();
+        }
+
+        catch(System.Exception ex)
+
+
         }
 
 
