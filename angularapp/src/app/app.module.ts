@@ -9,6 +9,12 @@ import { OrganizerComponentComponent } from './organizer-component/organizer-com
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { ErrorComponentComponent } from './error-component/error-component.component';
+import { DisplayplayerComponent } from './displayplayer/displayplayer.component';
+import { ListplayerComponent } from './listplayer/listplayer.component';
+import { DeleteplayerComponent } from './deleteplayer/deleteplayer.component';
+import { AddplayerComponent } from './addplayer/addplayer.component';
+import { EditplayerComponent } from './editplayer/editplayer.component';
+import { ListplayersComponent } from './listplayers/listplayers.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { ErrorComponentComponent } from './error-component/error-component.compo
     OrganizerComponentComponent,
     LoginComponentComponent,
     RegistrationComponentComponent,
-    ErrorComponentComponent
+    ErrorComponentComponent,
+    DisplayplayerComponent,
+    ListplayerComponent,
+    DeleteplayerComponent,
+    AddplayerComponent,
+    EditplayerComponent,
+    ListplayersComponent
   ],
   imports: [
     BrowserModule,

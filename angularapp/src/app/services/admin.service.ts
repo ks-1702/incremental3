@@ -18,17 +18,17 @@ export class AdminService {
  
   getAllPlayers():Observable <any[]>
   {
-    return this.httpclient.get<any[]>(this.url + '/listplayers').pipe(catchError(this.handleError));
+    return this.httpclient.get<any[]>(this.url + '/GetPlayer');
   }
  
   getPlayer(id:number):Observable<IPlayer>
   {
-    return this.httpclient.get<IPlayer>(this.url + '/listplayer/' + id);
+    return this.httpclient.get<IPlayer>(this.url + '/GetPlayer/' + id);
   }
  
   httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
   addPlayer(playerdata:IPlayer):Observable<IPlayer>{
-    return this.httpclient.post<IPlayer>(this.url+'/AddMovie',playerdata,this.httpOptions);
+    return this.httpclient.post<IPlayer>(this.url+'/AddPlayer',playerdata,this.httpOptions);
   }
  
   editPlayer(playerdata:IPlayer):Observable<IPlayer>
