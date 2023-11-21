@@ -11,7 +11,7 @@ import {catchError} from 'rxjs/operators';
 export class AdminService {
  
  
-  private url : "https://8080-faddfbdeeecfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
+  private url = "https://8080-faddfbdeeecfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
   constructor(private httpclient:HttpClient) { }
  
  

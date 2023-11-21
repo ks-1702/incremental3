@@ -13,7 +13,8 @@ export class ListplayersComponent implements OnInit {
  
   constructor(private ps:AdminService) {
     this.ps.getAllPlayers().subscribe(data=>{this.players.push(...data)})
-    console.log(this.players);
+    console.log("hi");
+
   }
  
   ngOnInit(): void {
