@@ -10,8 +10,8 @@ import { Player } from '../models/player';
 export class GetplayersComponent implements OnInit {
 playerdata:Player[]=[]
   constructor(private as:AdminService) {
-    this.as.getPlayers().subscribe(data=>{this.playerdata.push(...data)})
-    console.log(this.playerdata)
+    this.as.getPlayers().subscribe(data=>{(this.playerdata.push(...data))})
+    console.log("hi")
    }
 
   ngOnInit(): void {
