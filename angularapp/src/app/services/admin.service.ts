@@ -17,7 +17,7 @@ export class AdminService {
 
   getAllPlayers():Observable <Player[]>
   {
-    return this.httpclient.get<Player[]>
+    return this.httpclient.get<Player[]>(this.url+ '/GetPlayer')
   }
  
 }

@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GetplayersComponent } from './getplayers/getplayers.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GetplayersComponent
   ],
   imports: [
     BrowserModule,
