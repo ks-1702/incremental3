@@ -9,6 +9,7 @@ import { TeamslistComponent } from './teamslist/teamslist.component';
 import { FindteamComponent } from './findteam/findteam.component';
 import { EditteamComponent } from './editteam/editteam.component';
 import { DeleteteamComponent } from './deleteteam/deleteteam.component';
+import { AddteamComponent } from './addteam/addteam.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:'DeletePlayer/:id',component:DeleteplayersComponent},
   {path:'ListTeams',component:TeamslistComponent},
   {path:'DisplayTeams/:id',component:FindteamComponent},
-  {path:'AddTeam',component:TeamslistComponent},
+  {path:'AddTeam',component:AddteamComponent},
   {path:'EditTeam/:id',component:EditteamComponent},
   {path:'DeleteTeam/:id',component:DeleteteamComponent},
 
