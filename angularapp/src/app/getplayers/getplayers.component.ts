@@ -11,8 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GetplayersComponent implements OnInit {
 playerdata:Player[]=[]
   constructor(private as:AdminService,private ar:ActivatedRoute,private route:Router) {
-    this.as.getPlayers().subscribe(data=>{(this.playerdata.push(...data))})
-    console.log("hi")
+    
+    this.as.getPlayers().subscribe(data=>{(this.playerdata.push(...data)); console.log(this.playerdata)} )
    }
 
   ngOnInit(): void {
