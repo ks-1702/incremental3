@@ -54,9 +54,7 @@ export class AdminService {
     return this.httpclient.get<Team>(this.url+'/DisplayTeams/'+id)
   }
 
-
-
-
+  addTeam(teamdata:Team)
 
  
 }

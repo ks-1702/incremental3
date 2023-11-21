@@ -1,4 +1,4 @@
 export interface Team {
-    teamid:number
+    teamId:number
     teamName:string
 }
