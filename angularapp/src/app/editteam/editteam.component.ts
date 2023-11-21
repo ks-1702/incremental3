@@ -17,7 +17,21 @@ export class EditteamComponent implements OnInit {
   ngOnInit(){
     const tid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(tid)
-    this.findTeam(this.id)
+    this.getteam(this.id)
+  }
+
+  getteam(id:number)
+  {
+    this.as.findTeam(id).subscribe((data:Team)=>this.teamdata=data)
+  }
+
+  saveData(team:Team)
+  {
+    this.teamdata=team
+    this.as.editTeam(this.teamdata).subscribe(()=>{
+      alert("Record Edited")
+      this.route.navigate(['/ListTeams'])
+    })
   }
 
 }
