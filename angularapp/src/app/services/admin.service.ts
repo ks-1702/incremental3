@@ -54,7 +54,10 @@ export class AdminService {
     return this.httpclient.get<Team>(this.url+'/DisplayTeams/'+id)
   }
 
-  addTeam(teamdata:Team)
+  addTeam(teamdata:Team):Observable<Team>
+  {
+    return this.httpclient.post<Team>(this.url+'/AddTeam',teamdata,this.httpOptions)
+  }
 
  
 }
