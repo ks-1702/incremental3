@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { GetplayersComponent } from './getplayers/getplayers.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AddplayersComponent } from './addplayers/addplayers.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetplayersComponent
+    GetplayersComponent,
+    AddplayersComponent
   ],
   imports: [
     BrowserModule,
