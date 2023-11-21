@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
+import { IPlayer } from '../models/iplayer';
  
 @Component({
   selector: 'app-listplayers',
@@ -8,11 +9,11 @@ import { AdminService } from '../services/admin.service';
 })
 export class ListplayersComponent implements OnInit {
  
-  playerdata: any[] = []
+  players: IPlayer[] = []
  
   constructor(private ps:AdminService) {
-    this.ps.getAllPlayers().subscribe(data=>{this.playerdata.push(...data)})
-    console.log(this.playerdata);
+    this.ps.getAllPlayers().subscribe(data=>{this.players.push(...data)})
+    console.log(this.players);
   }
  
   ngOnInit(): void {

@@ -16,9 +16,9 @@ export class AdminService {
  
  
  
-  getAllPlayers():Observable <any[]>
+  getAllPlayers():Observable <IPlayer[]>
   {
-    return this.httpclient.get<any[]>(this.url + '/GetPlayer')
+    return this.httpclient.get<IPlayer[]>(this.url + '/GetPlayer')
   }
  
   getPlayer(id:number):Observable<IPlayer>
