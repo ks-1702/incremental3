@@ -116,7 +116,7 @@ namespace dotnetapp.Controllers
  
         [HttpGet]
         [Route("GetTeams")]
-        public IActionResult GetTeams(int id)
+        public IActionResult GetTeams()
         {
             var data=context.Teams.ToList();
             return Ok(data);  

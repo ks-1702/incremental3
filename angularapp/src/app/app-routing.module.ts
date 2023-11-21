@@ -5,6 +5,10 @@ import { AddplayersComponent } from './addplayers/addplayers.component';
 import { EditplayersComponent } from './editplayers/editplayers.component';
 import { DeleteplayersComponent } from './deleteplayers/deleteplayers.component';
 import { GetoneplayerComponent } from './getoneplayer/getoneplayer.component';
+import { TeamslistComponent } from './teamslist/teamslist.component';
+import { FindteamComponent } from './findteam/findteam.component';
+import { EditteamComponent } from './editteam/editteam.component';
+import { DeleteteamComponent } from './deleteteam/deleteteam.component';
 
 
 const routes: Routes = [
@@ -12,7 +16,13 @@ const routes: Routes = [
   {path:'AddPlayer',component:AddplayersComponent},
   {path:'GetPlayer/:id',component:GetoneplayerComponent},
   {path:'EditPlayer/:id',component:EditplayersComponent},
-  {path:'DeletePlayer/:id',component:DeleteplayersComponent}
+  {path:'DeletePlayer/:id',component:DeleteplayersComponent},
+  {path:'ListTeams',component:TeamslistComponent},
+  {path:'DisplayTeams/:id',component:FindteamComponent},
+  {path:'AddTeam',component:TeamslistComponent},
+  {path:'EditTeam/:id',component:EditteamComponent},
+  {path:'DeleteTeam/:id',component:DeleteteamComponent},
+
   
 ];
 
