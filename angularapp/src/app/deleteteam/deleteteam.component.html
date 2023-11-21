@@ -4,9 +4,11 @@
 <form (ngSubmit)="saveData(teamdata)" #playerform="ngForm">
     <div>
         <label for="teamId">ID</label>
-        <input type="text" id="id" name="id" readonly [(ngModel)]="playerdata.id">
+        <input type="text" id="teamId" name="teamId" readonly [(ngModel)]="teamdata.teamId">
     </div>
     <div>
-        <label for="name">Player Name</label>
-        <input type="text" id="name" name="name" readonly [(ngModel)]="playerdata.name">
+        <label for="teamName">Team Name</label>
+        <input type="text" id="teamName" name="teamName" readonly [(ngModel)]="teamdata.teamName">
     </div>
+
+    <input type="submit" value="Delete" class="btn btn-Info">
