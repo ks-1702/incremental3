@@ -14,7 +14,7 @@ export class EditteamComponent implements OnInit {
 
   constructor(private as:AdminService, private route: Router, private ar: ActivatedRoute) { }
 
-  ngOnInit(){
+  ngOnInit():void{
     const tid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(tid)
     this.getteam(this.id)
