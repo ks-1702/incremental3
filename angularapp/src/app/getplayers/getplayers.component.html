@@ -1,4 +1,21 @@
-<p>getplayers works!</p>
-<div class="container">
-    <div class="jumbotron">
-        
+[11:53 AM] Archit Rupak Kulkarni
+<h3>Player List</h3>
+<table class="table">
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+    <th>category</th>
+    <th>id</th>
+    <th>BiddingPrice</th>
+ 
+    <tr *ngFor="let m of playerdata">
+        <td>{{m.id}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.age}}</td>
+        <td>{{m.category}}</td>
+        <td>{{m.teamId}}</td>
+        <td>{{m.biddingPrice}}</td>
+        <td><a [routerLink]="['/editplayer/',m.id]">EDIT</a></td>
+    </tr>
+</table>
+ 
