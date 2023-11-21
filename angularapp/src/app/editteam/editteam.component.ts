@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../models/team';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AdminService } from '../services/admin.service';
 
 @Component({
   selector: 'app-editteam',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editteam.component.css']
 })
 export class EditteamComponent implements OnInit {
+  teamdata:Team={teamId:0,teamName:''}
+  id:number
 
-  constructor() { }
+  constructor(private as:AdminService, private route: Router, private ar: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    const tid=this.ar.snapshot.paramMap.get('id')
+    this.id=Number(tid)
+    this.findTeam(this.id)
   }
 
 }

@@ -59,6 +59,15 @@ export class AdminService {
     return this.httpclient.post<Team>(this.url+'/AddTeam',teamdata,this.httpOptions)
   }
 
+  editTeam(teamdata:Team):Observable<Team>
+  {
+    return this.httpclient.put<Team>(this.url+'/EditTeam'+teamdata.teamId,teamdata,this.httpOptions)
+  }
+
+  deleteTeam(id:number):Observable<Team>{
+    return this.httpclient.delete<Team>(this.url+'/DeleteTeam'+id)
+  }
+
  
 }
  
