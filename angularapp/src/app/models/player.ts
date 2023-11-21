@@ -1,9 +1,8 @@
-export interface IPlayer {
+export interface Player {
     id:number
     name:string
     age:number
-    category:string
+    category: string
     biddingPrice:number
     teamid:number
-
 }

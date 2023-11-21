@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from '../models/iplayer';
+import { IPlayer } from '../models/Player';
 import {catchError} from 'rxjs/operators';
+import { Player } from '../models/player';
 // import { HttpErrorResponse } from '@angular/common/http';
  
 @Injectable({
@@ -13,6 +14,11 @@ export class AdminService {
  
   private url = "https://8080-faddfbdeeecfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
   constructor(private httpclient:HttpClient) { }
+
+  getAllPlayers():Observable <Player[]>
+  {
+    return this.httpclient.get<Player[]>
+  }
  
 }
  
