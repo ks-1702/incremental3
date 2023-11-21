@@ -22,7 +22,7 @@ export class EditteamComponent implements OnInit {
 
   getteam(id:number)
   {
-    this.as.findTeam(id).subscribe((data:Team)=>this.teamdata=data)
+    this.as.findTeam(id).subscribe((data:Team)=> this.teamdata=data)
   }
 
   saveData(team:Team)
