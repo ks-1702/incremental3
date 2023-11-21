@@ -121,6 +121,19 @@ namespace dotnetapp.Controllers
             var data=context.Teams.ToList();
             return Ok(data);  
         }
+
+         [HttpGet]
+        [Route("DisplayTeams/{id}")]
+        public IActionResult GetTeamsbyid(int id){
+             
+             var data=context.Teams.Find(id);
+             if(data!=null)
+             {
+                return Ok(data);
+             }
+             return BadRequest();
+
+        }
  
         [HttpPut]
         [Route("EditTeam/{id}")]

@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import { Player } from '../models/player';
+import { Team } from '../models/team';
 // import { HttpErrorResponse } from '@angular/common/http';
  
 @Injectable({
@@ -19,6 +20,11 @@ export class AdminService {
     return this.httpclient.get<Player[]>(this.url+ '/GetPlayer')
   }
 
+  getonePlayer(id:number):Observable<Player>
+  {
+    return this.httpclient.get<Player>(this.url+'/GetPlayer/'+id)
+  }
+
   httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
   addPlayers(playerdata:Player):Observable<Player>
   {
@@ -30,15 +36,18 @@ export class AdminService {
     return this.httpclient.put<Player>(this.url+ '/EditPlayer/'+playerdata.id,playerdata,this.httpOptions)
   }
 
-  getonePlayer(id:number):Observable<Player>
-  {
-    return this.httpclient.get<Player>(this.url+'/GetPlayer/'+id)
-  }
+ 
 
   deletePlayer(id:number):Observable<Player>
   {
     return this.httpclient.delete<Player>(this.url + '/DeletePlayer/' + id)
   }
+
+
+  getTeam():Observable<Team>
+
+
+
 
 
  
