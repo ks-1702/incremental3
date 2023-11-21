@@ -9,6 +9,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddplayersComponent } from './addplayers/addplayers.component';
 import { EditplayersComponent } from './editplayers/editplayers.component';
 import { GetoneplayerComponent } from './getoneplayer/getoneplayer.component';
+import { DeleteplayersComponent } from './deleteplayers/deleteplayers.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { GetoneplayerComponent } from './getoneplayer/getoneplayer.component';
     GetplayersComponent,
     AddplayersComponent,
     EditplayersComponent,
-    GetoneplayerComponent
+    GetoneplayerComponent,
+    DeleteplayersComponent
   ],
   imports: [
     BrowserModule,
