@@ -11,13 +11,13 @@ import { AdminService } from '../services/admin.service';
   styleUrls: ['./getoneplayer.component.css']
 })
 export class GetoneplayerComponent implements OnInit {
-playerdata:Player
-id:number
-  constructor(private as:AdminService,private ar:ActivatedRoute,private route:Router) { }
+// playerdata:Player
+// id:number
+//   constructor(private as:AdminService,private ar:ActivatedRoute,private route:Router) { }
 
   ngOnInit(): void {
-    const tid=this.ar.snapshot.paramMap.get('id')
-    this.id=Number(tid)
+    // const tid=this.ar.snapshot.paramMap.get('id')
+    // this.id=Number(tid)
   }
 
 }

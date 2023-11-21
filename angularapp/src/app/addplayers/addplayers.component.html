@@ -8,6 +8,12 @@
     </div>
 
     <div>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Enter Age:"
+        [(ngModel)]="playerdata.age" required #name="ngModel">
+    </div>
+
+    <div>
         <label for="category">Category</label>
         <input type="text" id="category" name="category" placeholder="Enter Category:"
         [(ngModel)]="playerdata.category" required #name="ngModel">

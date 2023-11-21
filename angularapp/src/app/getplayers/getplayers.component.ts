@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
 import { Player } from '../models/player';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-getplayers',
@@ -9,7 +10,7 @@ import { Player } from '../models/player';
 })
 export class GetplayersComponent implements OnInit {
 playerdata:Player[]=[]
-  constructor(private as:AdminService) {
+  constructor(private as:AdminService,private ar:ActivatedRoute,private route:Router) {
     this.as.getPlayers().subscribe(data=>{(this.playerdata.push(...data))})
     console.log("hi")
    }
