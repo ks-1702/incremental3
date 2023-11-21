@@ -20,7 +20,7 @@ id:number
     this.as.findTeam(this.id).subscribe((data:Team) =>{
       this.teamdata=data;
     })
-    console.log(this.teamdata);
+    // console.log(this.teamdata);
   }
 
   Show()
