@@ -13,14 +13,14 @@
                 <th>Team ID</th>
             </thead>
             <tbody>
-                <tr *ngFor = "let m of playerdata">
-                    <td> {{m.id}} </td>
-                    <td> {{m.name}} </td>
-                    <td> {{m.age}} </td>
-                    <td> {{m.category}}</td>
-                    <td> {{m.biddingPrice}}</td>
-                    <td> {{m.teamid}}</td>
-                    <a [routerLink] = "['/find/',m.id]">Details</a>&nbsp;
+                <tr *ngFor="let m of playerdata">
+                    <td>{{m.id}}</td>
+                    <td>{{m.name}}</td>
+                    <td>{{m.age}}</td>
+                    <td>{{m.category}}</td>
+                    <td>{{m.biddingPrice}}</td>
+                    <td>{{m.teamid}}</td>
+                    <a [routerLink] ="['/find/',m.id]">Details</a>&nbsp;
                     <a [routerLink] = "['/edit/',m.id]">Edit</a>&nbsp;
                     <a [routerLink] = "['/delete/',m.id]">Delete</a>&nbsp;
                 </tr>
