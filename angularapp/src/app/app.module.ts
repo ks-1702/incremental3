@@ -7,13 +7,17 @@ import { GetplayersComponent } from './getplayers/getplayers.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddplayersComponent } from './addplayers/addplayers.component';
+import { EditplayersComponent } from './editplayers/editplayers.component';
+import { GetoneplayerComponent } from './getoneplayer/getoneplayer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GetplayersComponent,
-    AddplayersComponent
+    AddplayersComponent,
+    EditplayersComponent,
+    GetoneplayerComponent
   ],
   imports: [
     BrowserModule,
