@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPlayer } from '../Model/iplayer';
+import { IPlayer } from '../models/iplayer';
 import {catchError} from 'rxjs/operators';
 // import { HttpErrorResponse } from '@angular/common/http';
  
@@ -11,33 +11,33 @@ import {catchError} from 'rxjs/operators';
 export class AdminService {
  
  
-  private url : "https://8080-bacdcffacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
+  private url : "https://8080-faddfbdeeecfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin";
   constructor(private httpclient:HttpClient) { }
  
  
  
   getAllPlayers():Observable <any[]>
   {
-    return this.httpclient.get<any[]>(this.url + '/GetPlayer');
+    return this.httpclient.get<any[]>(this.url + '/GetPlayer')
   }
  
   getPlayer(id:number):Observable<IPlayer>
   {
-    return this.httpclient.get<IPlayer>(this.url + '/GetPlayer/' + id);
+    return this.httpclient.get<IPlayer>(this.url + '/GetPlayer/' + id)
   }
  
   httpOptions = {headers:new HttpHeaders({'Content-type':'application/json'})}
   addPlayer(playerdata:IPlayer):Observable<IPlayer>{
-    return this.httpclient.post<IPlayer>(this.url+'/AddPlayer',playerdata,this.httpOptions);
+    return this.httpclient.post<IPlayer>(this.url+'/AddPlayer',playerdata,this.httpOptions)
   }
  
   editPlayer(playerdata:IPlayer):Observable<IPlayer>
   {
-    return this.httpclient.put<IPlayer>(this.url + '/EditPlayer/'+ playerdata.id,playerdata,this.httpOptions);
+    return this.httpclient.put<IPlayer>(this.url + '/EditPlayer/'+ playerdata.id,playerdata,this.httpOptions)
   }
   deletePlayer(id:number):Observable<IPlayer>
   {
-    return this.httpclient.delete<IPlayer>(this.url + '/DeletePlayer/' + id);
+    return this.httpclient.delete<IPlayer>(this.url + '/DeletePlayer/' + id)
   }
  
   // addDetails(detailsdata: Idetails) :Observable<Idetails>{
@@ -51,3 +51,4 @@ export class AdminService {
   //   return throwError(errmsg)
   // }
 }
+ 

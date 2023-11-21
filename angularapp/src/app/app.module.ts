@@ -11,7 +11,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { ErrorComponentComponent } from './error-component/error-component.component';
 import { DisplayplayerComponent } from './displayplayer/displayplayer.component';
-import { ListplayerComponent } from './listplayer/listplayer.component';
+
 import { DeleteplayerComponent } from './deleteplayer/deleteplayer.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { EditplayerComponent } from './editplayer/editplayer.component';
@@ -27,7 +27,6 @@ import { ListplayersComponent } from './listplayers/listplayers.component';
     RegistrationComponentComponent,
     ErrorComponentComponent,
     DisplayplayerComponent,
-    ListplayerComponent,
     DeleteplayerComponent,
     AddplayerComponent,
     EditplayerComponent,
