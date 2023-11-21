@@ -6,7 +6,7 @@ import { AddplayersComponent } from './addplayers/addplayers.component';
 
 const routes: Routes = [
   {path:'GetPlayer',component:GetplayersComponent},
-  {path:'addplayers',component:AddplayersComponent}
+  {path:'AddPlayer',component:AddplayersComponent}
   
 ];
 

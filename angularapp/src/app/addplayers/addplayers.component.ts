@@ -27,3 +27,4 @@ export class AddplayersComponent implements OnInit {
   }
 
 }
+``
