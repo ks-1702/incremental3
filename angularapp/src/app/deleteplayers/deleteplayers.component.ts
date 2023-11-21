@@ -13,7 +13,7 @@ export class DeleteplayersComponent implements OnInit {
   constructor(private as:AdminService, private ar: ActivatedRoute, private route: Router) { }
  
   id : number
-  playerdata : Player = {id:0,name:'',age:0,category:'',biddingPrice:0, teamId:0}
+  playerdata : Player = {id:0,name:'',age:0,category:'',biddingPrice:0, teamid:0}
  
   ngOnInit(): void {
     const tid = this.ar.snapshot.paramMap.get('id')
@@ -22,7 +22,7 @@ export class DeleteplayersComponent implements OnInit {
   }
  
   getPlayer(id : number) {
-    this.as.getPlayer(id).subscribe((data : Player) =>
+    this.as.getonePlayer(id).subscribe((data : Player) =>
       this.playerdata = data
     )
   }
