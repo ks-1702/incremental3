@@ -9,14 +9,22 @@
 
     <div>
         <label for="category">Category</label>
-        <input type="text" id="category" name="category" placeholder="Enter Rating:"
-        [(ngModel)]="playerdata.rating" required #name="ngModel">
+        <input type="text" id="category" name="category" placeholder="Enter Category:"
+        [(ngModel)]="playerdata.category" required #name="ngModel">
     </div>
 
     <div>
-        <label for="name">Release Year</label>
-        <input type="text" id="ra" name="rating" placeholder="Enter Rating:"
-        [(ngModel)]="playerdata.rating" required #name="ngModel">
+        <label for="biddingPrice">Bidding Price</label>
+        <input type="text" id="biddingPrice" name="biddingPrice" placeholder="Enter Bidding Price:"
+        [(ngModel)]="playerdata.biddingPrice" required #name="ngModel">
     </div>
+
+    <div>
+        <label for="teamid">Team Id</label>
+        <input type="text" id="teamid" name="teamid" placeholder="Enter Team Id:"
+        [(ngModel)]="playerdata.teamid" required #name="ngModel">
+    </div>
+    <input type="submit" value="Save" class="btn btn-Info" [disabled]="!playerform.valid">
+</form>
 
 
