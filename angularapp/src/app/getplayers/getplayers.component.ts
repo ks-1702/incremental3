@@ -20,3 +20,9 @@ playerdata:Player[]=[]
   }
 
 }
+
+
+playerdata:Player[]=[]
+const(){
+  this.as.getPlayers().subscribe(data=>{(this.playerdata.push)})
+
