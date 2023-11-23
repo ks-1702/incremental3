@@ -11,7 +11,7 @@ import { ActivatedRoute,Route, Router } from '@angular/router';
 export class TeamslistComponent implements OnInit {
 teamdata:any[]=[]
   constructor(private as:AdminService,ar:ActivatedRoute,route:Router) {
-    this.as.getTeam().subscribe(data=>{this.teamdata.push(...data);
+    this.as.getTeams().subscribe(data=>{this.teamdata.push(...data);
       
     })
    }
