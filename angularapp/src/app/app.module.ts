@@ -17,6 +17,11 @@ import { EditteamComponent } from './editteam/editteam.component';
 import { DeleteteamComponent } from './deleteteam/deleteteam.component';
 import { AddteamComponent } from './addteam/addteam.component';
 import { PlayerComponent } from './player/player.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { OrganizerComponent } from './organizer/organizer.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { PlayerComponent } from './player/player.component';
     EditteamComponent,
     DeleteteamComponent,
     AddteamComponent,
-    PlayerComponent
+    PlayerComponent,
+    NavbarComponent,
+    LoginComponent,
+    OrganizerComponent,
+    RegistrationComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
