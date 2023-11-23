@@ -4,5 +4,5 @@ export interface Player {
     age:number
     category: string
     biddingPrice:number
-    teamid:number
+    teamid?:number
 }
