@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../services/admin.service';
-import { Player } from '../models/player';
+import { Player } from '../../models/player';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -23,4 +23,12 @@ playerdata:Player[]=[]
 
 
 
+
+// export interface Player {
+
+// }
+
+// export interface Team {
+//   
+// }
 
