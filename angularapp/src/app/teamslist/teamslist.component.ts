@@ -9,7 +9,7 @@ import { ActivatedRoute,Route, Router } from '@angular/router';
   styleUrls: ['./teamslist.component.css']
 })
 export class TeamslistComponent implements OnInit {
-teamdata:any[]=[]
+teamdata:Team[]=[]
   constructor(private as:AdminService,ar:ActivatedRoute,route:Router) {
     this.as.getTeams().subscribe(data=>{this.teamdata.push(...data);
       

@@ -9,7 +9,7 @@ import { AdminService } from '../services/admin.service';
   styleUrls: ['./editteam.component.css']
 })
 export class EditteamComponent implements OnInit {
-  teamdata:Team={teamId:0,teamName:''}
+  teamdata:Team={id:0,name:'',maximumBudget:0}
   id:number
 
   constructor(private as:AdminService, private route: Router, private ar: ActivatedRoute) { }
